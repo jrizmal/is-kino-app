@@ -71,7 +71,9 @@ class _ShowingPageState extends State<ShowingPage> {
         child: GestureDetector(
           onTap: () {
             Navigator.of(ctx).push(new MaterialPageRoute(builder: (ctx) {
-              return SeatReservationPage();
+              return SeatReservationPage(
+                showing: sh,
+              );
             }));
           },
           child: Padding(

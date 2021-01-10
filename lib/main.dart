@@ -50,6 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: m["title"],
           rating: m["rating"],
           id: m["movieID"],
+          image: m["coverImage"],
         ),
       );
     }

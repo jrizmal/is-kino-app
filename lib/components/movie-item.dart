@@ -3,7 +3,7 @@ import 'package:iskinoapp/models/Movie.dart';
 import 'package:iskinoapp/pages/showing-page.dart';
 
 class MovieItem extends StatelessWidget {
-  Movie movie;
+  final Movie movie;
   MovieItem({this.movie});
 
   @override
@@ -26,8 +26,11 @@ class MovieItem extends StatelessWidget {
           child: Row(
             children: [
               Image.network(
-                "https://cdn.shopify.com/s/files/1/0057/3728/3618/products/950e439404c3d5eddd86ae876cec83bf_949b5045-2503-4883-bcd2-ff1f31f5b14c_240x360_crop_center.progressive.jpg",
+                (movie.image == null
+                    ? "https://shahpourpouyan.com/wp-content/uploads/2018/10/orionthemes-placeholder-image-1.png"
+                    : movie.image),
                 height: 200,
+                width: 100,
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
