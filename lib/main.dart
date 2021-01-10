@@ -40,14 +40,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void fetchMovies() async {
     http.Response res =
-        await http.get("https://is-kino.azurewebsites.net/api/Movie");
+        await http.get("https://is-kino.azurewebsites.net/api/movie");
     var json = jsonDecode(res.body);
+    print(json);
     List<Movie> mvs = [];
     for (var m in json) {
       mvs.add(
         Movie(
           title: m["title"],
           rating: m["rating"],
+          id: m["movieID"],
         ),
       );
     }
@@ -60,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
     print("movie list building");
     List<Widget> moviesItems = [];
     for (Movie movie in this.movies) {
-      print(movie);
+      // print(movie);
       moviesItems.add(new MovieItem(
         movie: movie,
       ));

@@ -14,7 +14,9 @@ class MovieItem extends StatelessWidget {
         onTap: () {
           print("movie tapped");
           Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
-            return ShowingPage();
+            return ShowingPage(
+              movie: movie,
+            );
           }));
         },
         child: Card(
